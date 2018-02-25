@@ -3,9 +3,13 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
 import axios from 'axios';
+import {
+  Expandable
+} from '../../components';
 
 export default class CountryBrowser extends Component {
 
@@ -40,30 +44,32 @@ export default class CountryBrowser extends Component {
 
   renderRegions(regions){
     return Object.keys(regions)
-      .map(region => {(
-        <Text key={region}>{region}</Text>
-      )});
+      .sort()
+      .map(region => (
+        <Expandable
+          key={region || 'other'}
+          title={region || 'Other'}
+          data={regions[region]}
+        />
+      ));
   }
 
   render() {
     console.log('state');
     console.log(this.state.regions);
     return (
-      <View style={styles.countryBrowser}>
-        <Text style={styles.title}>
-          CountryBrowser Component!
-          {this.renderRegions(this.state.regions)}
-        </Text>
-      </View>
+      <ScrollView style={styles.countryBrowser}>
+        {this.renderRegions(this.state.regions)}
+      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   countryBrowser: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#EDEDED',
+    //justifyContent: 'center',
+    //alignItems: 'center',
+    padding: 5,
   },
   title: {
     fontSize: 20,
