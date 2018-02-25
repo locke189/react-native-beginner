@@ -12,7 +12,7 @@ export default class Header extends Component {
     return (
       <View style={styles.header}>
         <Text style={styles.headerTitle}>
-          Header Component!
+          {this.props.title}
         </Text>
       </View>
     );
@@ -23,13 +23,21 @@ const styles = StyleSheet.create({
   header: {
     width: '100%',
     justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-    backgroundColor: '#FF0000',
+    alignItems: 'flex-start',
+    backgroundColor: '#009688',
+    paddingTop: 15,
+    height: 60,
+    paddingLeft: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 2, height: 2},
+    shadowOpacity: 0.2,
+    elevation: 2,
+    position: 'relative',
   },
   headerTitle: {
     fontSize: 20,
+    color: '#FFF',
     textAlign: 'center',
-    margin: 10,
+    margin: 2,
   },
 });

@@ -28,7 +28,7 @@ export default class App extends Component {
   render() {
     return (
       <View>
-        <Header />
+        <Header title={'World Countries'}/>
         <CountryBrowser />
       </View>
     );

@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   countryBrowser: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#EDEDED',
   },
   title: {
     fontSize: 20,
