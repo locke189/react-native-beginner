@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   },
   body: {
     backgroundColor: '#E0F2F1',
-    height: 50,
+    height: 300,
     overflow: 'scroll',
   },
   button:{
